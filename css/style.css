@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "avenirBold";
+  src: url("../font/AvenirNextLTPro-Bold.otf") format("otf");
+}
+@font-face {
+  font-family: "avenirLight";
+  src: url("../font/AvenirNextLTPro-It.otf") format("otf");
+}
+@font-face {
+  font-family: "avenirRegular";
+  src: url("../font/AvenirNextLTPro-Regular.otf") format("otf");
+}
+@font-face {
+  font-family: "cantoBold";
+  src: url("../font/Canto-Bold.ttf") format("ttf");
+}
+@font-face {
+  font-family: "cantoBoldItalic";
+  src: url("../font/Canto-BoldItalic.ttf") format("ttf");
+}
+@font-face {
+  font-family: "cantoItalic";
+  src: url("../font/Canto-Italic.ttf") format("ttf");
+}
+@font-face {
+  font-family: "cantoLight";
+  src: url("../font/Canto-Light.ttf") format("ttf");
+}
+@font-face {
+  font-family: "cantoLightItalic";
+  src: url("../font/Canto-LightItalic.ttf") format("ttf");
+}
+@font-face {
+  font-family: "cantoRoman";
+  src: url("../font/Canto-Roman.ttf") format("ttf");
+}
+@font-face {
+  font-family: "cantoSemiBold";
+  src: url("../font/Canto-SemiBold.ttf") format("ttf");
+}
+@font-face {
+  font-family: "cantoSamiBoldItalic";
+  src: url("../font/Canto-SemiBoldItalic.ttf") format("ttf");
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  font-family: avenirRegular;
+}/*# sourceMappingURL=style.css.map */
