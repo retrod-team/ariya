@@ -234,42 +234,7 @@ if(isset($_GET['update'])){
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
                                         </tr>
                                         <tr>
-                                        <?php
-                                            
-                                            $si=0;
-                                                foreach(getSlider() as $slideList){
-                                                
-                                                    
-                                                    $si ++;
-                                                    $id = $slideList['id'];
-                                                    $title = $slideList['title'];
-                                                    $subtitle = $slideList['subtitle'];
-                                                    $img = FRONT_SITE_HERO_IMG.$slideList['img'];
-                                                    $status = $slideList['status'];
-                                                    $page = $slideList['page'];
-                                                    
-                                                    $deleteUrl = FRONT_BOOKING_SITE."/admin/hero-section.php?remove=$id";
-                                                    echo '
-                                                        <tr>
-                                                            <th class="mb-0 text-xs"><img style="width: 80px;" src="'.$img.'"></th>
-                                                            <th class="mb-0 text-xs">'.$title.'</th>
-                                                            <th class="mb-0 text-xs">'.$subtitle.'</th>
-                                                            <th class="mb-0 text-xs">'.$page.'</th>
-                                                            <th class="mb-0 text-xs">
-                                                                
-                                                                <div class="tableCenter">
-                                                                    <span class="tableHide"><i class="fas fa-ellipsis-h"></i></span>
-                                                                    <span class="tableHoverShow">
-                                                                        <a class="tableIcon update bg-gradient-info" href="hero-section.php?update='.$id.'" style="margin-right:10px"><i class="far fa-edit"></i></a>
-                                                                        <a class="tableIcon delete bg-gradient-danger" href="hero-section.php?remove='.$id.'"><i class="far fa-trash-alt"></i></a>
-                                                                    </span>
-                                                                </div>
-                                                            </th>
-                                                        </tr>
-                                                    ';
-                                                }
-                                            
-                                        ?>
+                                         
                                         </tr>
                                     </table>
                                 </div>

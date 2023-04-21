@@ -5,25 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arpita</title>
+    <?php include('include/head.php') ?>
 </head>
 <body>
 
-    <nav>
-        <div class="container">
-            <div class="dFlex">
-                <div class="leftSide">
-                    <a href="" class="logo"></a>
-                </div>
-                <div class="rightSide">
-                    <div class="navbar">
-                        <div class="toggleBtn"><span></span><span></span><span></span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <main></main>
-    <footer></footer>
+    <?php include('include/nav.php') ?>
+
+    <?php include('include/homeMain.php') ?>
+
+    <?php include('include/footer.php') ?>
+
+
+
+
+
+    <script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+      pagination: {
+        el: ".swiper-pagination",
+        type: "fraction",
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+    
     
 </body>
 </html>

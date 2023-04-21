@@ -1,5 +1,7 @@
 <?php
 
+
+
 function redirect($link){
     ob_start();
     header('Location: '.$link);

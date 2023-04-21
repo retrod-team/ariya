@@ -51,4 +51,14 @@
 body {
   font-size: 14px;
   font-family: avenirRegular;
+}
+
+nav {
+  position: relative;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
 }/*# sourceMappingURL=style.css.map */
