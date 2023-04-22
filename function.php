@@ -153,6 +153,45 @@
     }
 
 
+    
+                                            
+    $heroSecArray=array();
+    foreach(getSlider('',1) as $slideList){
+        
+        $id = $slideList['id'];
+        $title = $slideList['title'];
+        $subtitle = $slideList['subtitle'];
+        $img = FRONT_SITE_HERO_IMG.$slideList['img'];
+        $status = $slideList['status'];
+        
+        $deleteUrl = FRONT_BOOKING_SITE."/admin/hero-section.php?remove=$id";
+        $heroSecArray[] = [
+                'img'=>$img,
+                'title'=>$title,
+                'paragraph'=>$subtitle,
+                'target'=>"slide$id"
+        ];
+    }
+
+    $resHeroSecArray=array();
+    foreach(getSlider('',3) as $slideList){
+        
+        $id = $slideList['id'];
+        $title = $slideList['title'];
+        $subtitle = $slideList['subtitle'];
+        $img = FRONT_SITE_HERO_IMG.$slideList['img'];
+        $status = $slideList['status'];
+        
+        $deleteUrl = FRONT_BOOKING_SITE."/admin/hero-section.php?remove=$id";
+        $resHeroSecArray[] = [
+                'img'=>$img,
+                'title'=>$title,
+                'paragraph'=>$subtitle,
+                'target'=>"slide$id"
+        ];
+    }  
+
+
 
 
 

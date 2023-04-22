@@ -1,30 +1,37 @@
 <main>
-    <header>
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                
-                <?php
-                
-                        foreach(getSlider() as $slideList){
-                        
-                            
-                            $id = $slideList['id'];
-                            $title = $slideList['title'];
-                            $subtitle = $slideList['subtitle'];
-                            $img = FRONT_SITE_HERO_IMG.$slideList['img'];
-                            
-                            echo '
-                                <div class="swiper-slide"><img src="'.$img.'"/></div>
-                            ';
-                        }
-                    
-                ?>
-            
-            </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
+    <header class="videoWithSlider" id="heroSection" >
+        <div id="video">
+            <video width="440px" loop="true" autoplay="autoplay" controls="false" muted>
+                <source src="video/herovideo.mp4" type="video/mp4" />
+            </video>
         </div>
+        <div class="bg">
+            <?php
+                        
+                foreach($heroSecArray as $val){
+                    $img = $val['img'];
+                    $target = $val['target'];
+                    echo '
+                        <img id="'.$target.'" src="'.$img.'">
+                    ';
+                }
+            
+            ?>
+        </div>
+        <div class="Content">
+
+            <?php
+                foreach($heroSecArray as $val){
+                    $title = $val['title'];
+                    $target = $val['target'];
+                    echo '
+                        <a class="heroImgBtn h2" data-target="'.$target.'" href="javascript:void(0)">'.$title.'</a>
+                    ';
+                }
+            ?>
+
+        </div>
+
     </header>
 
     <section id="aboutSection">

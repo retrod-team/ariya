@@ -53,11 +53,233 @@ body {
   font-family: avenirRegular;
 }
 
-nav {
-  position: relative;
+h1, .h1, h2, .h2, h3, .h3, h4, h4 {
+  font-family: cantoRoman;
 }
 
-header {
+h1, .h1 {
+  font-size: 1.5em;
+  line-height: 1.2em;
+  letter-spacing: -0.02em;
+}
+
+h2, .h2 {
+  font-size: 2.6em;
+  line-height: 1.2em;
+  margin-bottom: 0.5em;
+  letter-spacing: -0.02em;
+}
+
+h3, .h3 {
+  font-size: 2em;
+  line-height: 1.2em;
+  margin-bottom: 0.83em;
+  letter-spacing: -0.02em;
+}
+
+h4, .h4 {
+  font-size: 1.5em;
+  line-height: 1.2em;
+  margin-bottom: 0.5em;
+  letter-spacing: -0.02em;
+}
+
+p {
+  font-size: 17px;
+  line-height: 1.6em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.dFlex {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+.dFlex.inl {
+  display: inline-flex;
+}
+.dFlex.aic {
+  align-items: center;
+}
+.dFlex.aie {
+  align-items: end;
+}
+.dFlex.jcc {
+  justify-content: center;
+}
+.dFlex.jcsb {
+  justify-content: space-between;
+}
+.dFlex.jcse {
+  justify-content: space-evenly;
+}
+.dFlex.fdc {
+  flex-direction: column;
+}
+
+.videoWithSlider {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+.videoWithSlider #video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.videoWithSlider #video video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.videoWithSlider #video video::-webkit-media-controls {
+  display: none;
+}
+.videoWithSlider .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.videoWithSlider .bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.4;
+  z-index: 2;
+}
+.videoWithSlider .bg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.5;
+  transform: scale(1);
+  visibility: hidden;
+  transition: 0.2s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.videoWithSlider .bg img.show {
+  opacity: 1;
+  transform: scale(1.2);
+  visibility: visible;
+}
+.videoWithSlider .Content {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  z-index: 5;
+  transform: translateY(-50%);
+}
+.videoWithSlider .Content a {
+  width: 20%;
+  text-align: center;
+  color: white;
+  text-shadow: 0 1px 20px black;
+  height: 100px;
+  line-height: 100px;
+  font-family: avenirBold;
+  font-size: 25px;
+  letter-spacing: 1.2px;
+  word-break: break-word;
+  position: relative;
+}
+.videoWithSlider .Content a::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 50%;
+  top: 50%;
+  left: 0;
+  background-color: #fff;
+  opacity: 0.6;
+  transform: translateY(-50%);
+  transition: 0.5s ease-in-out;
+}
+.videoWithSlider .Content a:hover::before {
+  height: 100%;
+  opacity: 1;
+}
+
+nav {
+  position: absolute;
+  padding: 10px 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+}
+nav .logo {
+  width: 128px;
+  display: block;
+}
+nav .toggleBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+nav .toggleBtn .bar {
+  position: relative;
+  width: 21px;
+  height: 21px;
+  cursor: pointer;
+  margin-right: 16px;
+}
+nav .toggleBtn .bar span {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  transition-property: transform, opacity, border-radius;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.75, 0, 0.25, 1);
+  border-radius: 50%;
+  background-color: currentColor;
+}
+nav .toggleBtn .bar span:nth-child(1), nav .toggleBtn .bar span:nth-child(2), nav .toggleBtn .bar span:nth-child(3) {
+  top: 0;
+}
+nav .toggleBtn .bar span:nth-child(2n) {
+  left: calc(50% - 1.5px);
+}
+nav .toggleBtn .bar span:nth-child(3), nav .toggleBtn .bar span:nth-child(6), nav .toggleBtn .bar span:nth-child(9) {
+  left: calc(100% - 3px);
+}
+nav .toggleBtn .bar span:nth-child(4), nav .toggleBtn .bar span:nth-child(5), nav .toggleBtn .bar span:nth-child(6) {
+  top: calc(50% - 1.5px);
+}
+nav .toggleBtn .bar span:nth-child(7), nav .toggleBtn .bar span:nth-child(8), nav .toggleBtn .bar span:nth-child(9) {
+  top: calc(100% - 3px);
+}
+nav .toggleBtn.light .bar, nav .toggleBtn.light .text {
+  color: #fff;
+}
+
+#heroSection {
   position: relative;
   width: 100%;
   height: 100vh;
