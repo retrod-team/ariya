@@ -108,6 +108,7 @@
         $num = 0;
         $oddBlock = '';
         $evenBlock = '';
+        $html = '';
         foreach(roomArryGen($limit) as $val){
             $num ++;
             $img = $val['img'];
@@ -124,7 +125,7 @@
                 $imgSlide .= '<img src="'.$imgVal.'" alt="">';
             }
 
-            echo '
+            $html .= '
                 <div class="col-md-4 col-sm-12">
                     <div class="room-item">
                         <div class="room-img">
@@ -150,6 +151,10 @@
             ';
 
         }
+
+        return $html;
+
+
     }
 
 
@@ -190,6 +195,72 @@
                 'target'=>"slide$id"
         ];
     }  
+
+    $aminitySection = [
+        [
+            'name'=>'Free parking',
+            'desc'=>'Provide the parking the hotel for the private use of guests.',
+            'url'=>'javascript:void(0)',
+            'icon'=> ""
+        ],
+        [
+            'name'=>'Complimentary Buffet Breakfast',
+            'desc'=>'We have a complimentary breakfast buffet has a lot of tasty dishes available from 7 to 10 am.',
+            'url'=>'javascript:void(0)',
+            'icon'=> ""
+        ],
+        [
+            'name'=>'WiFi And Broadbandb Internet',
+            'desc'=>'We provide Internet Services for secure wired & wireless Wi-Fi to our guests.',
+            'url'=>'javascript:void(0)',
+            'icon'=> ""
+        ],
+        [
+            'name'=>'In House Laundry Facility',
+            'desc'=>'Every night, massive loads of dirty towels, sheets, tablecloths, uniforms and other laundry is produced, to provide people with wash & clean laundry.',
+            'url'=>'javascript:void(0)',
+            'icon'=> ""
+        ],
+        [
+            'name'=>'Station Pick-up And Drop',
+            'desc'=>"The Travel desk / Concierge arrange the pick up and drop for their hotel's guests from their station or to their station.",
+            'url'=>'javascript:void(0)',
+            'icon'=> ""
+        ],
+        [
+            'name'=>'In-House Mini Bar',
+            'desc'=>'A mini-bar consists of a refrigerator packed with snacks and drinks. A basic mini-bar is stocked with alcoholic drinks, soda, and snack foods.',
+            'url'=>'javascript:void(0)',
+            'icon'=> ""
+        ]
+    ];
+
+    $package = [
+        [
+            'name'=>'BEST OF CHANDIPUR & BHITARAKANIKA TOUR',
+            'price'=>'4,999.00',
+            'duration'=>'2/3',
+            'persion'=>'10',
+            'img'=>'',
+            'url'=>''
+        ],
+        [
+            'name'=>'BEST OF CHANDIPUR & BHITARAKANIKA TOUR',
+            'price'=>'4,999.00',
+            'duration'=>'2/3',
+            'persion'=>'10',
+            'img'=>'',
+            'url'=>''
+        ],
+        [
+            'name'=>'BEST OF CHANDIPUR & BHITARAKANIKA TOUR',
+            'price'=>'4,999.00',
+            'duration'=>'2/3',
+            'persion'=>'10',
+            'img'=>'',
+            'url'=>''
+        ],
+    ];
 
 
 

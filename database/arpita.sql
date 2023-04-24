@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 21, 2023 at 02:32 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 7.4.30
+-- Generation Time: Apr 24, 2023 at 03:34 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -40,7 +40,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `name`, `username`, `password`, `status`) VALUES
-(1, 'Marrion', 'mail@hotelnewmarrion.com', 'Pass@2022', 1);
+(1, 'Arpita', 'arpitabeachresort@gmail.com', 'Pass@2022', 1);
 
 -- --------------------------------------------------------
 
@@ -199,6 +199,13 @@ CREATE TABLE `counter_table` (
   `visiter_ip` varchar(250) NOT NULL,
   `visiter_date` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `counter_table`
+--
+
+INSERT INTO `counter_table` (`id`, `visiter_ip`, `visiter_date`) VALUES
+(1, '::1', '2023-04-23 10:00:27');
 
 -- --------------------------------------------------------
 
@@ -494,6 +501,15 @@ CREATE TABLE `room` (
   `bathroom` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `room`
+--
+
+INSERT INTO `room` (`id`, `pId`, `slug`, `header`, `bedtype`, `totalroom`, `roomcapacity`, `description`, `noAdult`, `noChild`, `add_on`, `status`, `mrp`, `roomArea`, `noBed`, `noBathroom`, `faceId`, `view`, `booking`, `area`, `bed`, `bathroom`) VALUES
+(1, 0, 'classic-deluxe', 'Classic Deluxe', 'King', 0, 3, '', 2, 0, '2023-04-23 10:34:08', 1, 2000, NULL, NULL, NULL, 0, 0, 0, 0, 0, 0),
+(2, 0, 'super-deluxe', 'Super Deluxe', 'King', 0, 3, '', 2, 0, '2023-04-23 10:34:51', 1, 2500, NULL, NULL, NULL, 0, 0, 0, 0, 0, 0),
+(3, 0, 'premium', 'Premium', 'King', 0, 3, '', 2, 0, '2023-04-23 10:35:27', 1, 2500, NULL, NULL, NULL, 0, 0, 0, 0, 0, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -505,6 +521,18 @@ CREATE TABLE `room_amenities` (
   `room_id` int(11) NOT NULL,
   `amenitie_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `room_amenities`
+--
+
+INSERT INTO `room_amenities` (`id`, `room_id`, `amenitie_id`) VALUES
+(1, 1, 2),
+(2, 1, 3),
+(3, 2, 2),
+(4, 2, 3),
+(5, 3, 2),
+(6, 3, 3);
 
 -- --------------------------------------------------------
 
@@ -524,6 +552,15 @@ CREATE TABLE `room_detail` (
   `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `room_detail`
+--
+
+INSERT INTO `room_detail` (`id`, `room_id`, `title`, `singlePrice`, `doublePrice`, `price`, `extra_adult`, `extra_child`, `status`) VALUES
+(1, 1, 'Room Only', 1500, 1500, 0, 150, 300, 1),
+(2, 2, 'Room Only', 2199, 2199, 0, 150, 300, 1),
+(3, 3, 'Room Only', 2749, 2749, 0, 150, 300, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -535,6 +572,15 @@ CREATE TABLE `room_img` (
   `room_id` int(11) NOT NULL,
   `image` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `room_img`
+--
+
+INSERT INTO `room_img` (`id`, `room_id`, `image`) VALUES
+(1, 1, '667448.jpg'),
+(2, 2, '943472.jpg'),
+(3, 3, '151228.jpg');
 
 -- --------------------------------------------------------
 
@@ -870,7 +916,7 @@ ALTER TABLE `counter`
 -- AUTO_INCREMENT for table `counter_table`
 --
 ALTER TABLE `counter_table`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `couponcode`
@@ -960,25 +1006,25 @@ ALTER TABLE `quickpay`
 -- AUTO_INCREMENT for table `room`
 --
 ALTER TABLE `room`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `room_amenities`
 --
 ALTER TABLE `room_amenities`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `room_detail`
 --
 ALTER TABLE `room_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `room_img`
 --
 ALTER TABLE `room_img`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `setting`
